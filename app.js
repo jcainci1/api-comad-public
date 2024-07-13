@@ -110,6 +110,7 @@ app.use(methodOverride("_method"));
 
 // 3) ROUTES
 app.use("/api/v1/jackrabbit", jackrabbitRouter);
+app.get("/", (req, res) => res.json("I love coding"));
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
