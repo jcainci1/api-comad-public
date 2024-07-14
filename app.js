@@ -20,8 +20,6 @@ const jackrabbitRouter = require("./routes/jackrabbitRoutes");
 // Start express app
 const app = express();
 
-app.enable("trust proxy");
-
 const serve = http.createServer(app);
 
 // 1) GLOBAL MIDDLEWARES
