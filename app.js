@@ -16,6 +16,7 @@ const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 
 const jackrabbitRouter = require("./routes/jackrabbitRoutes");
+const musicRouter = require("./routes/musicRoutes");
 
 // Start express app
 const app = express();
@@ -108,7 +109,8 @@ app.use(methodOverride("_method"));
 
 // 3) ROUTES
 app.use("/api/v1/jackrabbit", jackrabbitRouter);
-app.get("/", (req, res) => res.json("I love coding"));
+app.use("/api/v1/music", musicRouter);
+// app.get("/", (req, res) => res.json("I love coding"));
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

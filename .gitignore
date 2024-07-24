@@ -1,0 +1,8 @@
+# Ignore environment files
+.env
+.env.*
+config.env
+file.env
+
+# Ignore specific files containing secrets
+secrets.json
